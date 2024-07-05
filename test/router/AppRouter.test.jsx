@@ -19,7 +19,7 @@ describe( 'Pruebas en <AppRouter>', () => {
       </AuthContext.Provider>
     );
 
-    expect( screen.getAllByText( 'Login' ) ).toBeTruthy();
+    expect( screen.getAllByText( 'Login' ).length ).toBe( 2 );
   } );
 
   test( 'Debe de mostrar la página de marvel si está autenticado', () => {
@@ -41,5 +41,6 @@ describe( 'Pruebas en <AppRouter>', () => {
     );
 
     expect( screen.getByRole( 'heading', { level: 1, name: 'Marvel Comics' } ) ).toBeTruthy();
+    expect( screen.getAllByText( 'Marvel' ).length ).toBeGreaterThanOrEqual( 1 );
   } );
 } );
